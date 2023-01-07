@@ -1,1 +1,69 @@
-<h1>Lista de usuarios</h1>
+<div class="card">
+  <div class="card-header">
+    Lista de usuarios
+  </div>
+  <div class="card-body">
+    <div class="card mb-2">
+      <div class="card-body">
+        <h5 class="text-center mb-4">LISTA DE USUARIOS</h5>
+        <div class="mb-4">
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Cedula</th>
+                <th scope="col">Grado</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Nombre</th>
+                <th scope="col">Rol</th>
+                <th scope="col">Estado</th>
+                <th scope="col">Acciones</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of users; index">
+                <td>{{ item.cedula }}</td>
+                <td>{{ grado(item.grado) }}</td>
+                <td>{{ item.apellidos }}</td>
+                <td>{{ item.nombres }}</td>
+                <td>{{ rol(item.rol) }}</td>
+                <td>
+                  <ng-container *ngIf="item.estado; else elseTemplate">
+                    <span *ngIf="item.estado" class="badge bg-success">{{ estado(item.estado) }}</span>
+                  </ng-container>
+                  <ng-template #elseTemplate>
+                    <span class="badge bg-danger">{{ estado(item.estado) }}</span>
+                  </ng-template>
+                </td>
+                <td>
+                  <a [routerLink]="['/users-edit/', item.id]" style="cursor: pointer;"><i class="bi bi-pencil-square"></i></a>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <nav aria-label="Page navigation example">
+            <ul class="pagination justify-content-center">
+              <li class="page-item">
+                <a class="page-link" aria-label="Previous">
+                  <span aria-hidden="true">&laquo;</span>
+                </a>
+              </li>
+              <li class="page-item"><a class="page-link">1</a></li>
+              <li class="page-item"><a class="page-link">2</a></li>
+              <li class="page-item"><a class="page-link">3</a></li>
+              <li class="page-item">
+                <a class="page-link" aria-label="Next">
+                  <span aria-hidden="true">&raquo;</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-primary" (click)="onClickBack()">Volver</button>
+    </div>
+  </div>
+</div>
+
+

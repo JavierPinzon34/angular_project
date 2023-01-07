@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BrowserModule } from '@angular/platform-browser'
+import { FormsModule } from '@angular/forms';
 
 import { UsersRoutingModule } from './users-routing.module';
 import { HomeComponent } from './pages/home/home.component';
@@ -19,8 +20,8 @@ import { EditComponent } from './pages/edit/edit.component';
   imports: [
     CommonModule,
     UsersRoutingModule,
-    FormsModule,
-    ReactiveFormsModule
+    BrowserModule,
+    FormsModule
   ]
 })
 export class UsersModule { }

@@ -11,56 +11,68 @@
             <div class="row mb-3">
               <div class="form-group col-6 mb-3">
                 <label for="password">Grado</label>
-                <select class="form-control" id="grado" >
-                  <option selected disabled>Seleccionar...</option>
-                  <option value="1">General</option>
-                  <option value="2">Coronel</option>
-                  <option value="3">Mayor</option>
-                  <option value="4">Capitán</option>
-                  <option value="5">Teniente</option>
-                  <option value="6">Subteniente</option>
-                  <option value="7">Sargento</option>
-                  <option value="8">Cabo</option>
-                  <option value="9">Soldado</option>
+                <select [(ngModel)]="form.grado" class="form-control" id="grado" [ngModelOptions]="{standalone: true}">
+                  <option [value]="null" disabled>Seleccionar...</option>
+                  <option [value]="1">General</option>
+                  <option [value]="2">Coronel</option>
+                  <option [value]="3">Mayor</option>
+                  <option [value]="4">Capitán</option>
+                  <option [value]="5">Teniente</option>
+                  <option [value]="6">Subteniente</option>
+                  <option [value]="7">Sargento</option>
+                  <option [value]="8">Cabo</option>
+                  <option [value]="9">Soldado</option>
                 </select>
               </div>
               <div class="form-group col-6 mb-3">
                 <label for="email">Correo personal</label>
-                <input type="email" class="form-control" id="email" placeholder="Correo personal">
+                <input type="email" class="form-control" name="correo_personal" placeholder="Correo personal" [(ngModel)]="form.correo_personal" [ngModelOptions]="{standalone: true}">
               </div>
               <div class="form-group col-6 mb-3">
                 <label for="password">Nombres</label>
-                <input type="text" class="form-control" id="password" placeholder="Nombres">
+                <input type="text" class="form-control" id="password" placeholder="Nombres" [(ngModel)]="form.nombres" [ngModelOptions]="{standalone: true}">
               </div>
               <div class="form-group col-6 mb-3">
                 <label for="email">Correo institucional</label>
-                <input type="email" class="form-control" id="email" placeholder="Correo institucional">
+                <input type="email" class="form-control" id="email" placeholder="Correo institucional" [(ngModel)]="form.correo_institucional" [ngModelOptions]="{standalone: true}">
               </div>
               <div class="form-group col-6 mb-3">
                 <label for="password">Apellidos</label>
-                <input type="text" class="form-control" id="password" placeholder="Apellidos">
+                <input type="text" class="form-control" id="password" placeholder="Apellidos" [(ngModel)]="form.apellidos" [ngModelOptions]="{standalone: true}">
               </div>
               <div class="form-group col-6 mb-3">
                 <label for="password">Telefono</label>
-                <input type="text" class="form-control" id="password" placeholder="Telefono">
+                <input type="text" class="form-control" id="password" placeholder="Telefono" [(ngModel)]="form.telefono" [ngModelOptions]="{standalone: true}">
               </div>
               <div class="form-group col-6 mb-3">
                 <label for="password">Cedula</label>
-                <input type="text" class="form-control" id="password" placeholder="Cedula">
+                <input type="text" class="form-control" id="password" placeholder="Cedula" [(ngModel)]="form.cedula" [ngModelOptions]="{standalone: true}">
               </div>
               <div class="form-group col-6 mb-3">
                 <label for="password">Rol</label>
-                <select class="form-control" id="grado" >
-                  <option selected disabled>Seleccionar...</option>
-                  <option value="1">Administrador</option>
-                  <option value="2">Analista</option>
-                  <option value="2">Estadistica</option>
-                  <option value="2">Auditor</option>
+                <select class="form-control" id="grado" [(ngModel)]="form.rol" [ngModelOptions]="{standalone: true}">
+                  <option [value]="null" disabled>Seleccionar...</option>
+                  <option [value]="1">Administrador</option>
+                  <option [value]="2">Analista</option>
+                  <option [value]="3">Estadistica</option>
+                  <option [value]="4">Auditor</option>
+                </select>
+              </div>
+              <div class="form-group col-6 mb-3">
+                <label for="password">Estado</label>
+                <select class="form-control" id="grado" [(ngModel)]="form.estado" [ngModelOptions]="{standalone: true}">
+                  <option [value]="true">Activo</option>
+                  <option [value]="false">Inactivo</option>
                 </select>
               </div>
             </div>
             <div style="text-align: right;">
-              <button type="submit" class="btn btn-outline-dark">CREAR USUARIO</button>
+              <ng-container *ngIf="editar; else elseTemplate">
+                <button (click)="editUser()" class="btn btn-outline-dark">ACTUALIZAR USUARIO</button>
+              </ng-container>
+              <ng-template #elseTemplate>
+                <button (click)="saveUser()" class="btn btn-outline-dark">CREAR USUARIO</button>
+              </ng-template>
             </div>
           </form>
         </div>

@@ -14,6 +14,7 @@ const routes: Routes = [
   { path: 'heroes-listado', component: ListadoComponent },
   { path: 'users-listado', component: HomeUserComponent },
   { path: 'users-add', component: AddComponent },
+  { path: 'users-edit/:id', component: AddComponent },
   { path: '404', component: ErrorPageComponent },
   { path: '**', redirectTo: '404' }
 ];
