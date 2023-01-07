@@ -1,0 +1,74 @@
+<div class="card">
+  <div class="card-header">
+    Crear Usuario
+  </div>
+  <div class="card-body">
+    <div class="card mb-2">
+      <div class="card-body">
+        <h5 class="text-center mb-4">DATOS DEL USUARIO</h5>
+        <div class="mb-2">
+          <form>
+            <div class="row mb-3">
+              <div class="form-group col-6 mb-3">
+                <label for="password">Grado</label>
+                <select class="form-control" id="grado" >
+                  <option selected disabled>Seleccionar...</option>
+                  <option value="1">General</option>
+                  <option value="2">Coronel</option>
+                  <option value="3">Mayor</option>
+                  <option value="4">Capitán</option>
+                  <option value="5">Teniente</option>
+                  <option value="6">Subteniente</option>
+                  <option value="7">Sargento</option>
+                  <option value="8">Cabo</option>
+                  <option value="9">Soldado</option>
+                </select>
+              </div>
+              <div class="form-group col-6 mb-3">
+                <label for="email">Correo personal</label>
+                <input type="email" class="form-control" id="email" placeholder="Correo personal">
+              </div>
+              <div class="form-group col-6 mb-3">
+                <label for="password">Nombres</label>
+                <input type="text" class="form-control" id="password" placeholder="Nombres">
+              </div>
+              <div class="form-group col-6 mb-3">
+                <label for="email">Correo institucional</label>
+                <input type="email" class="form-control" id="email" placeholder="Correo institucional">
+              </div>
+              <div class="form-group col-6 mb-3">
+                <label for="password">Apellidos</label>
+                <input type="text" class="form-control" id="password" placeholder="Apellidos">
+              </div>
+              <div class="form-group col-6 mb-3">
+                <label for="password">Telefono</label>
+                <input type="text" class="form-control" id="password" placeholder="Telefono">
+              </div>
+              <div class="form-group col-6 mb-3">
+                <label for="password">Cedula</label>
+                <input type="text" class="form-control" id="password" placeholder="Cedula">
+              </div>
+              <div class="form-group col-6 mb-3">
+                <label for="password">Rol</label>
+                <select class="form-control" id="grado" >
+                  <option selected disabled>Seleccionar...</option>
+                  <option value="1">Administrador</option>
+                  <option value="2">Analista</option>
+                  <option value="2">Estadistica</option>
+                  <option value="2">Auditor</option>
+                </select>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <button type="submit" class="btn btn-outline-dark">CREAR USUARIO</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="text-center">
+      <button class="btn btn-primary" (click)="onClickBack()">Volver</button>
+    </div>
+  </div>
+</div>
+
